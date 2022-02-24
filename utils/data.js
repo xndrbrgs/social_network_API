@@ -1,6 +1,5 @@
 const usernames = [
   "Xander",
-  "Jared",
   "Courtney",
   "Gillian",
   "Clark",
@@ -10,9 +9,8 @@ const usernames = [
   "Tamar",
   "Alex",
   "Mark",
-  "Tamar",
-  "Chamaco",
-  "Genjibre",
+  "John",
+  "Example"
 ];
 
 const emails = [
@@ -30,31 +28,14 @@ const emails = [
   "okroeger@verizon.com",
 ];
 
-// Get a random item given an array
-const getRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-// Gets a random name
-// const getRandomPerson = () => `${getRandom(usernames)}`;
-
-const getRandomPerson = (int) => {
-  const results = [];
-  for (let i = 0; i < int; i++) {
-    results.push({
-      person: getRandom(usernames),
-    });
-  }
-  return results;
+const getRandomPerson = (i) => {
+  return usernames[i];
 };
 
-// Function to generate random assignments that we can add to student object.
-const getRandomEmail = (int) => {
-  const results = [];
-  for (let i = 0; i < int; i++) {
-    results.push({
-      email: getRandom(emails),
-    });
-  }
-  return results;
+// Function to generate random emails that we can add to student object.
+const getRandomEmail = (i) => {
+  return emails[i];
 };
 
 // Export the functions for use in seed.js

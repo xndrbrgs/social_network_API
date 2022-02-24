@@ -17,14 +17,15 @@ connection.once("open", async () => {
   const users = [];
 
   // Get some random emails using a helper function that we imported from ./data
-  const emails = getRandomEmail(10);
-
-  const username = getRandomPerson(10);
-
-  users.push({
-    username,
-    emails,
-  });
+  for (var i = 0; i < 12; i++) {
+    const email = getRandomEmail(i);
+    const username = getRandomPerson(i);
+    
+    users.push({
+      username,
+      email,
+    });
+  }
 
   // Add students to the collection and await the results
   await User.collection.insertMany(users);
@@ -37,7 +38,6 @@ connection.once("open", async () => {
 
   // Log out the seed data to indicate what should appear in the database
   console.table(users);
-  console.table(emails);
   console.info("Seeding complete! 🌱");
   process.exit(0);
 });

@@ -13,7 +13,7 @@ connection.once("open", async () => {
   // Drop existing users
   await User.deleteMany({});
 
-  // Create empty array to hold the students
+  // Create empty array to hold the users
   const users = [];
 
   // Get some random emails using a helper function that we imported from ./data
@@ -27,10 +27,10 @@ connection.once("open", async () => {
     });
   }
 
-  // Add students to the collection and await the results
+  // Add users to the collection and await the results
   await User.collection.insertMany(users);
 
-  // Add courses to the collection and await the results
+  // Add thoughts to the collection and await the results
   await Thought.collection.insertOne({
     thoughtText: "Wow this is kinda sick!",
     createdAt: Date.now,

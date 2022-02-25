@@ -28,12 +28,12 @@ const emails = [
   "okroeger@verizon.com",
 ];
 
-
+// Function to generate random person 
 const getRandomPerson = (i) => {
   return usernames[i];
 };
 
-// Function to generate random emails that we can add to student object.
+// Function to generate random emails 
 const getRandomEmail = (i) => {
   return emails[i];
 };

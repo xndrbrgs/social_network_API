@@ -42,10 +42,10 @@ const thoughtController = {
 
   // PUT to update a thought by its _id
 
-  updateThought(req, res) {
+  updateThought({params, body}, res) {
     Thought.findOneAndUpdate(
       {
-        _id: req.params.thoughtId,
+        _id: params.thoughtId,
       },
       body,
       {
@@ -85,15 +85,14 @@ const thoughtController = {
 
   // POST to create a reaction stored in a single thought's reactions array field
 
-  addReaction(req, res) {
+  addReaction({params, body}, res) {
     console.log("Adding reaction!");
-    console.log(req.body);
-    thought.findOneAndUpdate(
+    Thought.findOneAndUpdate(
       {
-        _id: req.params.thoughtId,
+        _id: params.thoughtId,
       },
       {
-        $addToSet: { reactions: {reactionId: req.params.reactionId} },
+        $addToSet: { reactions: body },
       },
       {
         new: true,
@@ -113,13 +112,13 @@ const thoughtController = {
 
   // DELETE to pull and remove a reaction by the reaction's reactionId value
 
-  removeReaction(req, res) {
+  removeReaction({params}, res) {
     Thought.findOneAndUpdate(
       {
-        _id: req.params.thoughtId,
+        _id: params.thoughtId,
       },
       {
-        $pull: { reactions: {reactionId: req.params.reactionId} },
+        $pull: { reactions: {reactionId: params.reactionId} },
       },
       {
         new: true,

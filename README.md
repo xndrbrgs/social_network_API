@@ -8,7 +8,7 @@
 
   ## Walkthrough
   
-  A video explaning how to use this application can be seen here: https://youtu.be/lPy0Kd5oUm4
+  A video explaning how to use this application can be seen here: https://drive.google.com/file/d/1KGK1ttNNzRyyqYBWckMibQ31xLAX7SP5/view?usp=sharing
 
   This video goes over the methods used for both the `/users` and `/thoughts` routes that were used throughout the application. 
 
